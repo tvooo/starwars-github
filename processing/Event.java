@@ -1,0 +1,3 @@
+enum Event {
+  NOP, BUG, SOLVE, STAR, COMMENT, COMMIT, FORK;
+}
