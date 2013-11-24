@@ -1,6 +1,8 @@
 #include <Servo.h> 
 
 const int SERVO_DELAY = 5;
+const int SECOND = 1000;
+const int SERVO_PIN = 9;
 
 Servo myservo;
 int serialValue = 0;
@@ -11,14 +13,14 @@ int pos = 180 - middleStepDegree;
 int asciiNumberOffset = 48;
 
 void setup() { 
-  myservo.attach(9); // Servo is on pin 9
-  Serial.begin(9600);
+  myservo.attach( SERVO_PIN );
+  Serial.begin( 9600 );
   myservo.write( pos );
 }
 
 void showEvent( int event ) {
   goToPos(180 - event * stepDegree - middleStepDegree );
-  delay(7000);
+  delay(5 * SECOND);
   goToPos(180 - middleStepDegree);
 }
 
