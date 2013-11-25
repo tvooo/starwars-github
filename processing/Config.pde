@@ -5,8 +5,8 @@ class Config {
   String repoName;
   
   Config() {
-    user = "sekam";
-    password = "mojehaslo1";
+    user = "";
+    password = "";
     repoUser = "tvooo";
     repoName = "test";
   }
