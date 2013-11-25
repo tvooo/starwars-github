@@ -19,8 +19,19 @@ void setup() {
 }
 
 void showEvent( int event ) {
+  if ( event == 7 ) {
+      goToPos( 0 );
+      delay(SECOND);
+      goToPos(180);
+      delay(SECOND);
+      goToPos( 0 );
+      delay(SECOND);
+      goToPos(180 - middleStepDegree);
+      
+    return;
+  }
   goToPos(180 - event * stepDegree - middleStepDegree );
-  delay(5 * SECOND);
+  delay(3 * SECOND);
   goToPos(180 - middleStepDegree);
 }
 

@@ -96,7 +96,7 @@ void draw() {
     println( e.toString() );
   }
   
-  delay(10 * SECOND);
+  delay(3 * SECOND);
 }
 
 void fetchRepo() throws IOException {
@@ -109,6 +109,7 @@ void setup() {
   //println(Serial.list());
   myPort = new Serial(this, portName, 9600);
   
+  
   repoService = new RepositoryService();
   repoService.getClient().setCredentials( config.user, config.password );
   
@@ -119,5 +120,7 @@ void setup() {
   } catch (Exception e) {
     println( e.toString() );
   }
+  
+  sendEvent( Event.BOOTUP );
 }
 
